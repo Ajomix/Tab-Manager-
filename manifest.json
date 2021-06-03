@@ -1,0 +1,26 @@
+{
+    "manifest_version":2,
+    "name":"Dev Myself extension",
+    "version":"0.0001",
+    "permissions": ["desktopCapture", "activeTab","tabs","storage","<all_urls>"],
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+            
+            "run_at": "document_start",
+            "js":["content.js"]
+        }
+    ] ,
+ 
+        
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+      },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "Make this page red"
+    } 
+}
